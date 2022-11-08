@@ -20,30 +20,26 @@
 void bubble_sort(int *array, size_t size)
 {
 	size_t n = size, newn, i;
-	int temp, swapped_sth;
+	int temp;
 
 	if (size < 2 || array == NULL)
 		return;
 
 	while (size > 1)
 	{
-		swapped_sth = 0;
 		newn = 0;
 		for (i = 1; i < size; i++)
 		{
-
 			if (array[i - 1] > array[i])
 			{
-				swapped_sth = 1;
 				temp = array[i - 1];
 				array[i - 1] = array[i];
 				array[i] = temp;
 				newn = i;
+
+				print_array(array, n);
 			}
 		}
 		size = newn;
-
-		if (swapped_sth == 1)
-			print_array(array, n);
 	}
 }
